@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+    flex-wrap: wrap;
+}
+
+.header>.label {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 250px;
+    margin: 100px 100px 20px 100px;
+    flex-wrap: wrap;
+    height: 50px;
+}
+
+.label>i {
+    color: #adadad;
+    position: absolute;
+    left: 10px;
+    top: 17px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.label>.input {
+    padding: 5px 0 5px 40px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    width: 100%;
+    height: 100%;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.header>button {
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+    margin: 100px 120px 0 0;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    font-size: 1rem;
+    color: #767676;
+    font-weight: 600;
+    cursor: pointer;
+}
+.header>button:active{
+    scale: 0.96;
+}
+.overlay{
+    background: #11111160;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+}
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  z-index: 1000; /* above overlay */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.566);
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+}
+.popup>i{
+    position: absolute;
+    top: 20px;
+    left: 90%;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #d1d5db;
+    cursor: pointer;
+}
+.popup>i:hover{
+    color: #1f1f1f;
+}
+.popup>hr{
+    width: 100%;
+    height: 2px;
+    border: none;
+    background: #d1d5db;
+    margin-top: 15px;
+}
+form{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
+}
+form>input{
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    padding: 10px;
+    margin-top: 15px;
+    color: #adadad;
+}
+form>input::placeholder{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #adadad;
+}
+form>input:focus{
+    outline: none;
+}
+form>button{
+    padding: 10px;
+    border: 1px solid #1f1f1f;
+    background: #1f1f1f;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: whitesmoke;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.416);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #1f1f1f;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+table {
+    margin: 0 100px;
+    width: 1060px;
+    height: auto;
+    text-align: center;
+    border-collapse: collapse;
+    overflow: auto;
+}
+tr>th,
+tr>td{
+    font-size: 1rem;
+    color: #6b6b6b;
+    border-left: 1px solid #d1d5db;
+    white-space: nowrap;
+    border-right: 1px solid #d1d5db;
+    border-bottom: 1px solid #d1d5db;
+    padding: 5px 0 10px 10px;
+    border-top: 1px solid transparent;
+}
+tr>th{
+    font-weight: 600;
+    text-align: left;
+}
+tr>th:hover{
+    border-top: 1px solid #d1d5db;
+    cursor: pointer;
+}
+tr>td{
+    font-weight: 500;
+    text-align: left;
+}
+tr>td>input{
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+}
+tr>td:last-child{
+    width: 0;
+    border: none;
+}
+tr>td>button{
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    font-size: 1rem;
+    color: #767676;
+    font-weight: 600;
+    cursor: pointer;
+    position: fixed;
+    top: 100px;
+    left: 70%;
+}
+.pagination {
+  display: flex;
+  gap: 8px;
+  margin-top: 50px;
+  justify-content: start;
+  align-items: center;
+  margin-left: 50px;
+  flex-direction: row;
+  width: 95%;
+  border-top: 1px solid #d1d5db;
+  padding: 20px;
+}
+
+.pagination button {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #3b3b3b;
+  color: white;
+  font-weight: bold;
+}
+.pagination>p{
+    position: relative;
+    top: 0px;
+    left: 76%;
+    font-size: 1rem;
+    color: #303030;
+    font-weight: 600;
+}
+.log{
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  justify-content: start;
+  align-items: center;
+  margin-left: 50px;
+  flex-direction: row;
+  width: 90%;
+  padding: 20px;
+}
+@media only screen and (max-width: 320px){}
+@media only screen and (min-width: 321px) and (max-width: 376px){}
+@media only screen and (min-width: 377px) and (max-width: 426px){}
+@media only screen and (min-width: 427px) and (max-width: 768px){}
+@media only screen and (min-width: 769px) and (max-width: 968px){}
+@media only screen and (min-width: 969px) and (max-width: 1024px){}
+@media only screen and (min-width: 1441px) and (max-width: 2560px){
+    table{
+        width: 1700px;
+    }
+    .popup.open{
+        top: 100px;
+    }
+    tr>td>button{
+        left: 80%;
+    }
+    .pagination>p{
+        left: 82%;
+    }
+}
