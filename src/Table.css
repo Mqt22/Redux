@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
 .header {
     display: flex;
     flex-direction: row;
@@ -57,31 +58,36 @@
     font-weight: 600;
     cursor: pointer;
 }
-.header>button:active{
+
+.header>button:active {
     scale: 0.96;
 }
-.overlay{
+
+.overlay {
     background: #11111160;
     backdrop-filter: blur(5px);
     position: fixed;
     inset: 0;
     z-index: 999;
 }
+
 .popup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  z-index: 1000; /* above overlay */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.566);
-  width: 600px;
-  height: 400px;
-  overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 1000;
+    /* above overlay */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.566);
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
 }
-.popup>i{
+
+.popup>i {
     position: absolute;
     top: 20px;
     left: 90%;
@@ -90,17 +96,20 @@
     color: #d1d5db;
     cursor: pointer;
 }
-.popup>i:hover{
+
+.popup>i:hover {
     color: #1f1f1f;
 }
-.popup>hr{
+
+.popup>hr {
     width: 100%;
     height: 2px;
     border: none;
     background: #d1d5db;
     margin-top: 15px;
 }
-form{
+
+form {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -110,7 +119,8 @@ form{
     align-items: start;
     flex-wrap: wrap;
 }
-form>input{
+
+form>input {
     width: 100%;
     height: 50px;
     border-radius: 8px;
@@ -119,15 +129,18 @@ form>input{
     margin-top: 15px;
     color: #adadad;
 }
-form>input::placeholder{
+
+form>input::placeholder {
     font-size: 0.9rem;
     font-weight: 500;
     color: #adadad;
 }
-form>input:focus{
+
+form>input:focus {
     outline: none;
 }
-form>button{
+
+form>button {
     padding: 10px;
     border: 1px solid #1f1f1f;
     background: #1f1f1f;
@@ -137,28 +150,34 @@ form>button{
     font-size: 1rem;
     font-weight: 500;
 }
+
 .loader-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.416);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.416);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
 .loader {
-  border: 5px solid #f3f3f3;
-  border-top: 5px solid #1f1f1f;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #1f1f1f;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 table {
@@ -169,8 +188,9 @@ table {
     border-collapse: collapse;
     overflow: auto;
 }
+
 tr>th,
-tr>td{
+tr>td {
     font-size: 1rem;
     color: #6b6b6b;
     border-left: 1px solid #d1d5db;
@@ -179,28 +199,34 @@ tr>td{
     border-bottom: 1px solid #d1d5db;
     padding: 5px 0 10px 10px;
     border-top: 1px solid transparent;
+    position: relative;
 }
-tr>th{
+
+tr>th {
     font-weight: 600;
     text-align: left;
 }
-tr>th:hover{
+
+tr>th:hover {
     border-top: 1px solid #d1d5db;
-    cursor: pointer;
 }
-tr>td{
+
+tr>td {
     font-weight: 500;
     text-align: left;
 }
-tr>td>input{
+
+tr>td>input {
     border: 1px solid #d1d5db;
     cursor: pointer;
 }
-tr>td:last-child{
+
+tr>td:last-child {
     width: 0;
     border: none;
 }
-tr>td>button{
+
+tr>td>button {
     padding: 10px;
     width: 150px;
     height: 50px;
@@ -210,37 +236,38 @@ tr>td>button{
     font-size: 1rem;
     color: #767676;
     font-weight: 600;
-    cursor: pointer;
     position: fixed;
     top: 100px;
     left: 70%;
 }
+
 .pagination {
-  display: flex;
-  gap: 8px;
-  margin-top: 50px;
-  justify-content: start;
-  align-items: center;
-  margin-left: 50px;
-  flex-direction: row;
-  width: 95%;
-  border-top: 1px solid #d1d5db;
-  padding: 20px;
+    display: flex;
+    gap: 8px;
+    margin-top: 50px;
+    justify-content: start;
+    align-items: center;
+    margin-left: 50px;
+    flex-direction: row;
+    width: 90%;
+    border-top: 1px solid #d1d5db;
+    padding: 20px;
 }
 
 .pagination button {
-  padding: 4px 8px;
-  border: 1px solid #ccc;
-  background: #fff;
-  cursor: pointer;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
 }
 
 .pagination button.active {
-  background: #3b3b3b;
-  color: white;
-  font-weight: bold;
+    background: #3b3b3b;
+    color: white;
+    font-weight: bold;
 }
-.pagination>p{
+
+.pagination>p {
     position: relative;
     top: 0px;
     left: 76%;
@@ -248,34 +275,215 @@ tr>td>button{
     color: #303030;
     font-weight: 600;
 }
-.log{
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-  justify-content: start;
-  align-items: center;
-  margin-left: 50px;
-  flex-direction: row;
-  width: 90%;
-  padding: 20px;
+
+.log {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    justify-content: start;
+    align-items: center;
+    margin-left: 50px;
+    flex-direction: row;
+    width: 85%;
+    padding: 20px;
 }
-@media only screen and (max-width: 320px){}
-@media only screen and (min-width: 321px) and (max-width: 376px){}
-@media only screen and (min-width: 377px) and (max-width: 426px){}
-@media only screen and (min-width: 427px) and (max-width: 768px){}
-@media only screen and (min-width: 769px) and (max-width: 968px){}
-@media only screen and (min-width: 969px) and (max-width: 1024px){}
-@media only screen and (min-width: 1441px) and (max-width: 2560px){
+
+tr>th>.arrow_up {
+    position: absolute;
+    right: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    top: 0px;
+    transform: rotate(180deg);
+}
+
+tr>th>.arrow_down {
+    position: absolute;
+    right: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    top: 10px;
+    transform: rotate(-180deg);
+}
+tr>th>.arrow_up:hover,
+tr>th>.arrow_down:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+@media only screen and (max-width: 320px) {
+    body{
+        overflow-y: hidden;
+    }
+    .header{
+        width: 770px;
+    }
+    .header>.label{
+        margin: 100px 10px 20px 10px;
+        width: 150px;
+    }
+    .header>button{
+        margin: 100px 10px 0 10px;
+    }
     table{
-        width: 1700px;
+        width: 750px;
+        margin: 0 15px;
+        overflow-x: auto;
     }
-    .popup.open{
-        top: 100px;
-    }
-    tr>td>button{
-        left: 80%;
+    .pagination{
+        width: 770px;
+        margin-top: 50px;
+        margin-left: 10px;
     }
     .pagination>p{
+        left: 60%;
+    }
+    .log{
+        width: 90%;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 376px) {
+    body{
+        overflow-y: hidden;
+    }
+    .header{
+        width: 770px;
+    }
+    .header>.label{
+        margin: 100px 10px 20px 10px;
+        width: 150px;
+    }
+    .header>button{
+        margin: 100px 10px 0 10px;
+    }
+    table{
+        width: 750px;
+        margin: 0 15px;
+        overflow-x: auto;
+    }
+    .pagination{
+        width: 770px;
+        margin-top: 50px;
+        margin-left: 10px;
+    }
+    .pagination>p{
+        left: 60%;
+    }
+    .log{
+        width: 90%;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 377px) and (max-width: 426px) {
+    body{
+        overflow-y: hidden;
+    }
+    .header{
+        width: 770px;
+    }
+    .header>.label{
+        margin: 100px 10px 20px 10px;
+        width: 150px;
+    }
+    .header>button{
+        margin: 100px 10px 0 10px;
+    }
+    table{
+        width: 750px;
+        margin: 0 15px;
+        overflow-x: auto;
+    }
+    .pagination{
+        width: 770px;
+        margin-top: 50px;
+        margin-left: 10px;
+    }
+    .pagination>p{
+        left: 60%;
+    }
+    .log{
+        width: 90%;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 427px) and (max-width: 768px) {
+    .header>.label{
+        margin: 100px 10px 20px 10px;
+    }
+    .header>button{
+        margin: 100px 10px 0 0px;
+    }
+    table{
+        width: 750px;
+        margin: 0 15px;
+    }
+    .pagination{
+        width: 98%;
+        margin-top: 50px;
+        margin-left: 10px;
+    }
+    .pagination>p{
+        left: 60%;
+    }
+    .log{
+        width: 90%;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 968px) {
+    table{
+        width: 750px;
+    }
+    .pagination{
+        width: 78%;
+        margin-top: 50px;
+        margin-left: 100px;
+    }
+    .pagination>p{
+        left: 57%;
+    }
+    .log{
+        width: 60%;
+        margin-left: 80px;
+    }
+}
+
+@media only screen and (min-width: 969px) and (max-width: 1024px) {
+    table{
+        width: 800px;
+    }
+    .pagination{
+        width: 78%;
+        margin-top: 50px;
+        margin-left: 100px;
+    }
+    .pagination>p{
+        left: 65%;
+    }
+    .log{
+        width: 60%;
+        margin-left: 100px;
+    }
+}
+
+@media only screen and (min-width: 1441px) and (max-width: 2560px) {
+    table {
+        width: 1700px;
+    }
+
+    .popup.open {
+        top: 100px;
+    }
+
+    tr>td>button {
+        left: 80%;
+    }
+
+    .pagination>p {
         left: 82%;
     }
 }
