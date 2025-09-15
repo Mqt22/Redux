@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import './css/Table.css';
-import { useSelector, useDispatch } from 'react-redux'
-import { removerow, createrow, Search } from './redux/counter/Tableslice'
+import { useSelector, useDispatch } from 'react-redux';
+import { removerow, createrow, Search, setSort } from './redux/counter/Tableslice';
+import { IoMdArrowDropdown } from "react-icons/io";
+import { IoMdArrowDropup } from "react-icons/io";
 const Table = () => {
     const rows = useSelector(state => state.Table.rows);
     const searchStd = useSelector(state => state.Table.searchStd);
     const insertbydate = useSelector(state => state.Table.insertbydate);
+    // const setSort = useSelector(state => state.Table.setSorting);
     const dispatch = useDispatch()
     const [load, setLoad] = useState(false)
     const [form, setForm] = React.useState({
@@ -88,25 +91,83 @@ const Table = () => {
             )}
             {/* </div> */}
             <table>
-                <tr>
-                    <th><input type="checkbox" /></th>
-                    <th>Student id</th>
-                    <th>Title</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Year</th>
-                </tr>
-                {Current_Rows.map((row) => (
-                    <tr key={row.Id}>
-                        <td><input type="checkbox" /></td>
-                        <td>{row.Id}</td>
-                        <td>{row.Title}</td>
-                        <td>{row.First_name}</td>
-                        <td>{row.Last_name}</td>
-                        <td>{row.Year}</td>
-                        <td><button onClick={() => dispatch(removerow(row.Id))}>Remove Row</button></td>
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" name='checkbox'/></th>
+                        <th>
+                            Student id
+                            <IoMdArrowDropup
+                                onClick={() => dispatch(setSort({ key: "Id", order: "asc" }))}
+                                className='arrow_up'
+                            />
+                            <IoMdArrowDropdown
+                                onClick={() => dispatch(setSort({ key: "Id", order: "des" }))}
+                                className='arrow_down'
+                            />
+                        </th>
+
+                        <th>
+                            Title
+                            <IoMdArrowDropup
+                                onClick={() => dispatch(setSort({ key: "Title", order: "asc" }))}
+                                className='arrow_up'
+                            />
+                            <IoMdArrowDropdown
+                                onClick={() => dispatch(setSort({ key: "Title", order: "des" }))}
+                                className='arrow_down'
+                            />
+                        </th>
+
+                        <th>
+                            First Name
+                            <IoMdArrowDropup
+                                onClick={() => dispatch(setSort({ key: "First_name", order: "asc" }))}
+                                className='arrow_up'
+                            />
+                            <IoMdArrowDropdown
+                                onClick={() => dispatch(setSort({ key: "First_name", order: "des" }))}
+                                className='arrow_down'
+                            />
+                        </th>
+
+                        <th>
+                            Last Name
+                            <IoMdArrowDropup
+                                onClick={() => dispatch(setSort({ key: "Last_name", order: "asc" }))}
+                                className='arrow_up'
+                            />
+                            <IoMdArrowDropdown
+                                onClick={() => dispatch(setSort({ key: "Last_name", order: "des" }))}
+                                className='arrow_down'
+                            />
+                        </th>
+
+                        <th>
+                            Year
+                            <IoMdArrowDropup
+                                onClick={() => dispatch(setSort({ key: "Year", order: "asc" }))}
+                                className='arrow_up'
+                            />
+                            <IoMdArrowDropdown
+                                onClick={() => dispatch(setSort({ key: "Year", order: "des" }))}
+                                className='arrow_down'
+                            />
+                        </th>
                     </tr>
-                ))}
+                </thead>
+                <tbody>
+                    {Current_Rows.map((row) => (
+                        <tr key={row.Id}>
+                            <td><input type="checkbox" /></td>
+                            <td>{row.Id}</td>
+                            <td>{row.Title}</td>
+                            <td>{row.First_name}</td>
+                            <td>{row.Last_name}</td>
+                            <td>{row.Year}</td>
+                            <td><button onClick={() => dispatch(removerow(row.Id))}>Remove Row</button></td>
+                        </tr>
+                    ))}
+                </tbody>
             </table >
             <div className="pagination">
                 <button
